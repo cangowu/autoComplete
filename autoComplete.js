@@ -11,7 +11,9 @@
  * 可以通过移动鼠标上下键回车以及直接用鼠标点击
  * 选中搜索的选项，在一些关键的地方都有注释
  *
- * 实例参见CSDN博客：
+ * 实例参见:
+ * CSDN博客：http://blog.csdn.net/wzgdjm/article/details/51122615
+ * Github：https://github.com/cangowu/autoComplete
  *
  */
 (function () {
@@ -95,7 +97,6 @@
                 this.fnShowDiv();
             } else {//搜索之后监测键盘事件
                 var length = this.domDiv.children.length;
-                //光标键"↓"
                 if (event.keyCode == 40) {
                     ++this.index;
                     if (this.index >= length) {
@@ -106,7 +107,6 @@
                     this.domInput.value = this.domDiv.childNodes[this.index].text;
                     this.fnChangeClass();
                 }
-                //光标键"↑"
                 else if (event.keyCode == 38) {
                     this.index--;
                     if (this.index <= -1) {
@@ -117,7 +117,6 @@
                     this.domInput.value = this.domDiv.childNodes[this.index].text;
                     this.fnChangeClass();
                 }
-                //回车键
                 else if (event.keyCode == 13) {
                     this.fnLoadSearchContent();
                     this.fnShowDiv();
